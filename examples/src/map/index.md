@@ -76,7 +76,7 @@ class MapExample extends React.Component {
   handleMapStyle = () => {
     const { mapStyle } = this.state;
     this.setState({
-      mapStyle: mapStyle.style === 'nomal' ? { style: 'normal' } : { style: 'normal' },
+      mapStyle: mapStyle.style === 'normal' ? { style: 'midnight' } : { style: 'normal' },
     });
   }
 
@@ -114,10 +114,10 @@ class MapExample extends React.Component {
     });
   }
 
-  handleScrollWheelZoomg = () => {
-    const { scrollWheelZoomg } = this.state;
+  handleScrollWheelZoom = () => {
+    const { scrollWheelZoom } = this.state;
     this.setState({
-      scrollWheelZoomg: !scrollWheelZoomg,
+      scrollWheelZoom: !scrollWheelZoom,
     });
   }
 
@@ -177,7 +177,7 @@ class MapExample extends React.Component {
             defaultCursor={defaultCursor}
             draggingCursor={draggingCursor}
             mapStyle={mapStyle}
-            // mapType={mapType}
+            mapType={mapType}
             highResolution={highResolution}
             autoResize={autoResize}
             mapClick={mapClick}
@@ -196,12 +196,12 @@ class MapExample extends React.Component {
           <Button onClick={this.handleMinZoom}>改变最小显示级别</Button>
           <Button onClick={this.handleMaxZoom}>改变最大显示级别</Button>
           <Button onClick={this.handleMapStyle}>改变地图样式</Button>
-          <Button onClick={this.handleMaptype}>随机改变地图类型</Button>
+          <Button onClick={this.handleMapType}>随机改变地图类型</Button>
           <Button onClick={this.handleHighResolution}>{highResolution ? '不使用高分辨率地图' : '使用高分辨率地图'}</Button>
           <Button onClick={this.handleAutoResize}>{autoResize ? '不跟随容器大小变化' : '自适应容器大小变化'}</Button>
           <Button onClick={this.handleMapClick}>{mapClick ? '禁止底图点击' : '开启底图点击'}</Button>
           <Button onClick={this.handleDragging}>{dragging ? '禁止拖拽' : '允许拖拽'}</Button>
-          <Button onClick={this.handleScrollWheelZoomg}>{scrollWheelZoom ? '禁止滚轮放大缩小' : '允许滚轮放大缩小'}</Button>
+          <Button onClick={this.handleScrollWheelZoom}>{scrollWheelZoom ? '禁止滚轮放大缩小' : '允许滚轮放大缩小'}</Button>
           <Button onClick={this.handleDoubleClickZoom}>{doubleClickZoom ? '禁止双击放大' : '允许双击放大'}</Button>
           <Button onClick={this.handleKeyboard}>{keyboard ? '禁止键盘操作' : '启用键盘操作'}</Button>
           <Button onClick={this.handleInertialDragging}>{inertialDragging ? '禁止惯性拖拽' : '允许惯性拖拽'}</Button>
